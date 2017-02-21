@@ -1,0 +1,10 @@
+cd ..
+ls
+cd jacob
+ls
+cd desktop
+cd dojoassignments
+touch DojoAssignmentRepo.txt
+git init
+touch readme.md
+vi readme.md

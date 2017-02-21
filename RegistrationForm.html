@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form</title>
+		<style type="text/css">
+			#container{
+				/*trying to align the text feilds... not working*/
+				margin: 20px auto;
+				max-width: 600px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>My Registration Form</h1>
+		<form>
+			<label for="first_name">First Name: </label>
+			<input type="text" id="first_name" name="first_name" class="container">
+		</form>
+		<form>
+			<label for="last_name">Last Name: </label>
+			<input type="text" id="last_name" name="last_name" class="container">
+		</form>
+		<form>
+			<label for="email">Email </label>
+			<input type="text" id="email" name="email" class="container">
+		</form>
+		<form>
+			<label for="password">Password </label>
+    		<input type="password" id="password" name="password" class="container">
+		</form>
+		<form>
+    		<label for="PasswordConfirm">PW Confirm </label>
+    		<input type="password" id="PasswordConfirm" name="PasswordConfirm" class="container">
+		</form>
+			<label for="birthday">Birthday</label>
+			<input type="date" id="birthday" name="birthday" class="container">
+		</form>
+		<form>
+			<label for="male">Male</label>
+			<input type="radio" id="male" name="gender" value="male">
+	
+			<label for="female">Female</label>
+			<input type="radio" id="female" name="gender" value="female">
+		
+			<label for="other">Other</label>
+			<input type="radio" id="other" name="gender" value="other">
+		</form>
+
+		<form>
+			<label for="descriptoin">A short description about yourself:</label>
+			<input type="text" id="description" name="description" value="description" width="48" height="24">
+		</form>
+
+		<form>
+			<p>A short description about yourself:</p>
+			<textarea name="description"></textarea>
+		</form>
+
+		<select name="language">
+		    <option value="JavaScript">JavaScript</option>
+		    <option value="Python">Python</option>
+		</select>
+		<form>
+			<button type="submit">Submit</button>
+		</form>
+
+	</body>
+</html>
+
+
