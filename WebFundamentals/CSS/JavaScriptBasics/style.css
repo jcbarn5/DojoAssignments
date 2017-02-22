@@ -1,32 +1,77 @@
-*{
-  margin: 0px;
-  padding: 0px;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-body{
-  background: rgb(28, 52, 94);
-  margin: 10px;
+ul {
+    font-size: 10px;
 }
 
-#wrapper{
-  margin: : 10px;
+body {
+    background: rgb(28, 52, 94);
+    margin: 10px;
 }
 
-#header{
- background: rgb(206, 54, 67);
+#wrapper {
+    margin: 10px;
+    width: 970px;
 }
 
-#leftNav{
-  background: rgb(44, 128, 141);
-  display: inline-block;
+#center {
+    display: inline-flex;
+    height: 300px;
 }
 
-#main{
-  background: rgb(14, 24, 34);
-  display: inline-block;
-  /*vertical-align: top;*/
+#header {
+    background: rgb(206, 54, 67);
+    border-radius: 5px;
+    color: rgb(194, 214, 236);
 }
 
-#footer{
-  background: rgb(94, 102, 115);
+#list {
+    list-style-position: inside;
+}
+
+#leftNav {
+    background: rgb(44, 128, 141);
+    display: inline-block;
+    border-radius: 10px;
+    padding: 25px 25px 0px 25px;
+    width: 375px;
+    margin: 15px 15px 0px 0px;
+    color: rgb(194, 214, 236);
+    height: 150px;
+}
+
+#main {
+    background: rgb(14, 24, 34);
+    display: inline-block;
+    border-radius: 15px;
+    margin: 15px 0px 0px 0px;
+    color: rgb(194, 214, 236);
+    padding: 10px 5px 5px 10px;
+    /*vertical-align: top;*/
+}
+
+#summary {
+    font-size: 10px;
+}
+
+#summaryList {
+    /*list-style-position: inside;*/
+    padding: 5px 5px 5px 40px;
+
+}
+
+#footer {
+    background: rgb(94, 102, 115);
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    vertical-align: bottom;
+    color: rgb(194, 214, 236);
+    margin-top: 20px;
+}
+
+h3 {
+    padding-bottom: 5px;
 }
