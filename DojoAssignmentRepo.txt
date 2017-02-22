@@ -8,3 +8,8 @@ touch DojoAssignmentRepo.txt
 git init
 touch readme.md
 vi readme.md
+git status
+git add .
+git commit -m "added readme.md file"
+git remote add origin https://github.com/jcbarn5/DojoAssignments.git
+git push -u origin master

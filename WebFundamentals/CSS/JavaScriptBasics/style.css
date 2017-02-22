@@ -1,0 +1,32 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background: rgb(28, 52, 94);
+  margin: 10px;
+}
+
+#wrapper{
+  margin: : 10px;
+}
+
+#header{
+ background: rgb(206, 54, 67);
+}
+
+#leftNav{
+  background: rgb(44, 128, 141);
+  display: inline-block;
+}
+
+#main{
+  background: rgb(14, 24, 34);
+  display: inline-block;
+  /*vertical-align: top;*/
+}
+
+#footer{
+  background: rgb(94, 102, 115);
+}
