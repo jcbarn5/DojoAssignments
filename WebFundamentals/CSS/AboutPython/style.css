@@ -1,0 +1,26 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  outline: 1px dotted red;
+}
+
+#wrapper{
+  width: 1000px;
+  margin: 0px auto;
+  padding: 10px;
+  background-color: rgb(36, 81, 118);
+}
+
+span{
+  color: yellow;
+  font-size: 6px;
+
+}
+
+#list{
+  display: inline-block;
+}
+
+#bodyInfo{
+  display: inline-block;
+}
