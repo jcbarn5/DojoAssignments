@@ -1,0 +1,111 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    background: rgb(247, 247, 247);
+    vertical-align: top;
+    margin-right: 59px
+}
+
+#footer {
+    text-align: center;
+    background: rgb(247, 247, 247);
+    vertical-align: bottom;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+h1 {
+    display: inline-block;
+    font-family: Rock Salt;
+    font-size: 28px;
+}
+
+body {
+    padding: 0% 25% 0% 25%;
+}
+
+button {
+    background: #076a20;
+    vertical-align: bottom;
+    margin-left: 27%;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#boxInfoTop {
+    display: inline-block;
+    width: 350px;
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 50px;
+    vertical-align: top;
+}
+
+.contactImgs {
+    width: 20px;
+}
+
+#mePhoto {
+    width: 350px;
+    margin-top: 50px;
+    border: 5px solid rgb(192, 192, 192);
+    margin-left: 45px;
+    margin-bottom: 20px;
+}
+
+.techs {
+    width: 30px;
+    padding: 5px;
+}
+
+#about {
+    background: rgb(223, 211, 223);
+    padding-bottom: 38px;
+}
+
+.boxInfo {
+    background: rgb(223, 211, 223);
+    display: inline-block;
+    width: 200px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h3 {
+    background: #bdc3c7;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #bdc3c7, #2c3e50);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #bdc3c7, #2c3e50);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: rgb(249, 252, 254);
+}
+
+#wrapper {
+    width: 900px;
+    background: #20002c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #20002c, #cbb4d4);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #20002c, #cbb4d4);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px 0px 0px 0px;
+}
+
+.projects {
+    width: 200px;
+}
+
+#topRight {
+    display: inline-block;
+    text-align: right;
+    padding-left: 360px;
+}
+
+body {
+    width: auto;
+}
