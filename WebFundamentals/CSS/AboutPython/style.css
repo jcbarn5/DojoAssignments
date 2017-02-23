@@ -1,26 +1,204 @@
-*{
-  margin: 0px;
-  padding: 0px;
-  outline: 1px dotted red;
+* {
+    margin: 0px;
+    padding: 0px;
+    /*outline: 1px dotted red;*/
 }
 
-#wrapper{
-  width: 1000px;
-  margin: 0px auto;
-  padding: 10px;
-  background-color: rgb(36, 81, 118);
+#wrapper {
+    width: 1000px;
+    margin: 0px auto;
+    padding: 10px;
+    background-color: rgb(36, 81, 118);
+    font-family: sans-serif;
 }
 
-span{
-  color: yellow;
-  font-size: 6px;
-
+#textAdjuster {
+    text-align: right;
+    color: white;
+    padding-right: 40px;
 }
 
-#list{
-  display: inline-block;
+.textSize {
+    color: yellow;
+    font-size: 10px;
 }
 
-#bodyInfo{
-  display: inline-block;
+img {
+    height: 85px;
+}
+
+form {
+    background-color: rgb(68, 68, 68);
+    height: 40px;
+    width: 250px;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+input[type="text"] {
+    height: 25px;
+    width: 150px;
+}
+
+input[value="Search"] {
+    text-align: center;
+    color: rgba(107, 107, 107, 0.4);
+    font-size: 12px
+}
+
+#headerSearch {
+    display: inline-block;
+    position: relative;
+    left: 440px;
+    bottom: 46px;
+}
+
+button {
+    background: rgb(36, 81, 118);
+    height: 30px;
+    width: 40px;
+    border-left: 3px solid rgb(164, 172, 179);
+    border-top: 3px solid rgb(164, 172, 179);
+    border-right: 3px solid rgb(91, 91, 91);
+    border-bottom: 3px solid rgb(91, 91, 91);
+    border-radius: 5px;
+    margin-left: 2px;
+    color: white;
+}
+
+#navBar {
+    background: rgb(72, 127, 172);
+    padding: 8px 0px;
+    text-align: center;
+    width: 800px;
+    position: relative;
+    left: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px black;
+    font-family: sans-serif;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.navItem {
+    color: white;
+    text-decoration: none;
+    font-size: 21px;
+    margin-right: 35px;
+}
+
+span {
+    color: yellow;
+    font-size: 6px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+#highInfo {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#list {
+    display: inline-block;
+    text-decoration: underline;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    bottom: 40px;
+    right: 20px;
+    list-style-type: none;
+}
+
+#list ul li {
+    list-style-type: none;
+}
+
+#bodyInfo {
+    display: inline-block;
+    width: 570px;
+    font-size: 12px;
+    position: relative;
+    left: 40px;
+}
+
+#quote {
+    color: yellow;
+    font-size: 18px;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+#quote p span {
+    position: relative;
+    top: 8px;
+}
+
+#bodyInfo {
+    color: white;
+}
+
+#bodyInfo span {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#lowInfo {
+    display: inline-block;
+    width: 1020px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: relative;
+    right: 10px;
+    background: rgb(255, 255, 255);
+    list-style-position: inside;
+    border-top: 3px solid rgb(24, 56, 83);
+}
+
+#lowInfo span {
+    color: rgb(143, 185, 222);
+    font-size: 14px;
+}
+
+#lowInfo li {
+    list-style-type: square;
+}
+
+#lowInfo1 {
+    display: inline-block;
+    width: 400px;
+    vertical-align: top;
+    border-top: solid rgb(115, 167, 213) 4px;
+}
+
+#lowInfo2 {
+    display: inline-block;
+    width: 400px;
+    border-top: solid rgb(115, 167, 213) 4px;
+    margin-left: 15px;
+}
+
+
+/*for times sake not doing gradient on footer, too long spent on assignment for the day*/
+
+#footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.39);
+    padding-top: 35px;
+}
+
+#footer a {
+    text-decoration: none;
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#footer p {
+    font-size: 6px;
+    padding-top: 6px;
+    color: rgba (255, 255, 255, 0.4);
 }
