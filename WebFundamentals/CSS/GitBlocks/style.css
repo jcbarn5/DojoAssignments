@@ -1,0 +1,45 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  outline: 1px dotted red;
+  font-family: arial
+}
+
+.wrapper {
+  background: rgb(221, 223, 211);
+  width: 1000px;
+  padding: 15px;
+  margin: 0px auto;
+}
+
+img {
+  width: 40px;
+  background: rgb(56, 176, 172);
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.header {
+  width: 900px;
+  background: rgb(56, 176, 172);
+  display: inline-block;
+  width: 1000px;
+  padding-bottom: 10px;
+}
+
+.header h1 {
+  display: inline;
+  text-align: center;
+  font-size: 20px;
+}
+
+.header a {
+  color: white;
+  margin-left: 10px;
+  position: relative;
+  left: 195px;
+}
+
+.center {
+  background: rgb(251, 230, 145);
+}
