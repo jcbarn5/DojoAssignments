@@ -1,0 +1,51 @@
+#wrapper {
+  width: 800px;
+  margin: 0 auto;
+  background-color: darkgrey;
+  text-align: center;
+  font-family: monospace;
+}
+
+button {
+  background: red;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  font-stretch: expanded;
+}
+
+h1 {
+  background: yellow;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+#downer {
+  display: none;
+}
+
+#fadee {
+  display: none;
+  font-size: 18px;
+}
+
+#fader {
+  background: black;
+  font-size: 60px;
+}
+
+.selected {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.before {
+  display: block;
+  margin: 0 auto;
+}
+
+.peek {
+  display: none;
+}
