@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  width: 1000px;
+  height: 1000px
+  margin: 0 auto;
+  background: blue;
+  padding-left: 450px;
+}
+
+.picWrap {
+  margin: 0;
+}
+
+/*.pic {
+  display: block;
+  margin: 2px auto;
+}*/
+
+.pic0 {
+
+}
+
+.test {
+
+}

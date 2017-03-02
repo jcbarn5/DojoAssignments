@@ -52,7 +52,7 @@ $(document).ready(function(){
   });
 
   $(".after").click(function() {
-    $("#post").before("Here I am Elmer!");
+    $("#post").after("Here I am Elmer!");
   });
 
   $(".append").click(function() {
@@ -63,10 +63,14 @@ $(document).ready(function(){
     $(".mod").html("OW!");
   });
 
+
+
   var title = $ ("em").attr("title");
     $(".attribute").click(function() {
       $(".bc").text(title);
     });
+
+
 
     $( "input" )
     .keyup(function() {

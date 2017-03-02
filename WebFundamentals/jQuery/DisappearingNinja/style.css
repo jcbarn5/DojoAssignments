@@ -1,0 +1,41 @@
+*{
+  padding: 0;
+  margin: 0;
+  /*border: 1px dotted red;*/
+}
+
+body {
+  background: black;
+}
+
+.picWrap {
+  background: darkblue;
+  width: 1400px;
+  height: 700px;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+
+img {
+  width: 345px;
+  height: 345px;
+}
+
+button {
+  padding: 15px;
+  margin-left: 241px;
+  background: green;
+  border: 20px yellow solid;
+  border-radius: 20px;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+h1 {
+  color: yellow;
+}
+
+/*.disappear{
+  display: none;
+}*/
