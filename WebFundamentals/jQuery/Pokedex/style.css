@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*border: 1px dotted red;*/
+}
+
+.wrapper {
+  margin: 5px auto;
+  width: 1000px;
+}
+
+.PokeImages {
+  display: inline-block;
+  border: 2px solid black;
+  width: 750px;
+}
+
+img {
+  width: 122px;
+  height: 122px;
+  border: 1px solid black;
+}
+
+.PokeInfo {
+  display: inline-block;
+  border: 15px solid red;
+  border-bottom: 25px solid red;
+  width: 200px;
+  height: 500px;
+  position: fixed;
+  padding-left: 15px;
+}
