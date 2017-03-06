@@ -1,0 +1,22 @@
+Installed Django several days ago on during pip step in introduction and setup... Saw that it fetched a current Django version and installed everything within the terminal.
+
+pip list is a list of installed packages
+
+pip freeze is a list of installed packages listing their required version
+
+after pip freeze > requirements.txt there is a new requirements.txt file, containing the contents of pip freeze:
+"click==6.7
+Django==1.10.6
+Flask==0.12
+itsdangerous==0.24
+Jinja2==2.9.5
+MarkupSafe==0.23
+Werkzeug==0.11.15"
+
+pip show Django:
+shows Django Name, Version, Summary, Home Website, Author, Author-email, Liscense, Location, and Requires(empty)
+
+pip uninstall Django:
+Ran through and removed all Django files... :(
+
+pip search Flask: Gives a list of all of the descriptions with Flask in them

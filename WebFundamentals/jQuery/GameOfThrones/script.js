@@ -1,18 +1,22 @@
 $(document).ready(function(){
 
-	$('img').click(function(){
+	 $(document).on('click', 'img', function() {
 
 		var id = $(this).attr('id')
 
     $.get("http://anapioficeandfire.com/api/houses/"+id+"",function(res){
-			console.log(res)
-			$('.names').html(res.name)
-			$('.words').html(res.words)
-      for (var i = 0; i < array.length; i++) {
-        $('.titles').html(res.titles[i])
+			console.log(res);
+			$('.names').html("<h4>Name </h4>" + res.name);
+			$('.words').html("<h4>Words </h4>" + res.words);
 
+			var titles = "";
+			titles +="<h4>Titles </h4>";
+			titles +="<ul>";
+      for (var i = 0; i < res.titles.length; i++) {
+					titles += "<li>"+res.titles[i]+"</li>"
       }
-
+			titles +="</ul>";
+			$('.titles').html(titles);
 
 		},"json");
 
