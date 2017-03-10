@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Validation Example</title>
+</head>
+<body>
+  <h1>Enter a Valid(Any) Name!</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <form action='/process' method='POST'>
+    Name:<input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
+
+<!-- r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$'
+
+import re
+
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+
+@app.route('/', methods=['GET'])
+def index():
+
+@app.route('/process', methods=['POST'])
+def submit():
+    if len(request.form['email']) < 1:
+        flash("Email cannot be blank!")
+    elif not EMAIL_REGEX.match(request.form['email']):
+        flash("Invalid Email Address!")
+    else:
+        flash("Success!")
+    return redirect('/') -->

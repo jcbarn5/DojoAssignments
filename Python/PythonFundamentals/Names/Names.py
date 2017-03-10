@@ -24,8 +24,8 @@ users = {
   ]
  }
 
-def userNames(users):
-    for key, data in users.items():
+def userNames(test):
+    for key, data in test.items():
         print key
         count = 0
         for value in data:

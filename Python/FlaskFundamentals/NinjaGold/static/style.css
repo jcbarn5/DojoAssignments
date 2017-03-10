@@ -1,0 +1,41 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  margin: 0px auto;
+  width: 1000px;
+  background: lightblue;
+}
+
+.FCHC{
+  background: gold;
+}
+
+.Cave {
+  display: inline-block;
+  width: 200px;
+}
+
+.House {
+  display: inline-block;
+  width: 200px;
+
+}
+
+.Farm {
+  display: inline-block;
+  width: 200px;
+}
+
+.Casino {
+  display: inline-block;
+  width: 200px;
+}
+
+.activities {
+  height: 200px;
+  width: 800px;
+  border: 2px solid black;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Your Current Gold Total: {{session['gold']}}</h1>
+      <div class="FCHC">
+        <div class="Farm">
+          <h2>Farm</h2>
+          <p>(earns 10-20 gold)</p>
+          <form action="/process" method="post">
+            <input type="hidden" name="place" value="far">
+            <input type="submit" value="Find Gold!">
+          </form>
+        </div>
+        <div class="Cave">
+          <h2>Cave</h2>
+          <p>(earns 5-10 gold)</p>
+          <form action="/process" method="post">
+            <input type="hidden" name="place" value="cav">
+            <input type="submit" value="Find Gold!">
+          </form>
+        </div>
+
+        <div class="House">
+          <h2>House</h2>
+          <p>(earns 2-5 gold)</p>
+          <form action="/process" method="Post">
+            <input type="hidden" name="place" value="hou">
+            <input type="submit" value="Find Gold!">
+          </form>
+        </div>
+
+        <div class="Casino">
+          <h2>Casino</h2>
+          <p>(earns/takes 0-50 gold)</p>
+          <form action="/process" method="post">
+            <input type="hidden" name="place" value="cas">
+            <input type="submit" value="Find Gold!">
+          </form>
+        </div>
+
+      </div>
+
+      <h1>RESET</h1>
+      <a href="/reset">Reset Gold</a>
+
+      </form>
+
+      <div class="activities">
+        <h3>Acivities</h3>
+        <!-- for loop goes here -->
+        {% for item in session['activity']: %}
+				  <p class="activites">{{item}}</p>
+				  {% endfor %}
+      </div>
+
+
+    </div>
+  </body>
+</html>
