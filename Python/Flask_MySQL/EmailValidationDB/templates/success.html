@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Success Page</title>
+  </head>
+  <body>
+
+    <p>The email address you entered is ({{nemail}}) is a VALID email address! Thank you!</p>
+
+    <h1>Email Addresses Entered:</h1>
+    <ul>
+      {% if emails %}
+        {% for email in emails %}
+        <li>Email: {{ email['email'] }} {{email['created_at']}} </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+
+
+  </body>
+</html>
