@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Full Friends</title>
+  </head>
+  <body>
+    <h1>Friends</h1>
+    <ul>
+          {% for users in users %}
+            <li>{{users['first_name']}} {{users['last_name']}} -  {{users['email']}}</li>
+            <a href="/friends/{{users['id']}}/edit">
+            <button type="button" name="Edit">Edit</button>
+            </a>
+
+            <form action="/friends/{{users['id']}}/delete" method="Post">
+              <input type="submit" value="Delete!">
+            </form>
+          {% endfor %}
+    </ul>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+          <form action="/friends/{{users['id']}}/edit" method="post">
+          <input type="submit" name="" value="Edit">
+          </form>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form action="/friends" method="Post">
+      <p>First Name: <input type="text" name="first_name" value="" placeholder="John"></p>
+      <p>Last Name: <input type="text" name="last_name" value="" placeholder="Smith"></p>
+      <p>Email: <input type="text" name="email" value="" placeholder="JSmith@gmail.com"></p>
+      <p><input type="submit" value="Go!"></p>
+    </form>
+
+  </body>
+</html>

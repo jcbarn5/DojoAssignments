@@ -6,9 +6,8 @@ mysql = MySQLConnector(app,'emailvalidation')
 app.secret_key = "burrito"
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
-
   return render_template("index.html")
 
 @app.route('/register', methods=['POST'])
@@ -23,9 +22,10 @@ def register():
         data = {
             'email': request.form['email']
                 }
-        mysql.query_db(query, data)
+        lastrowid = mysql.query_db(query, data)
         session['newemail'] = request.form['email']
         return redirect('/success')
+
     return redirect('/')
 
 @app.route('/success')
@@ -33,9 +33,6 @@ def success():
     query = "select * from email"
     emails = mysql.query_db(query)
     nemail = session['newemail']
-
-    # emailtime = "Earned "+str(session['randomCasino'])+ " golds from the casino"
-    # session['activity'].append(casinosent)
 
     return render_template('success.html', emails = emails, nemail = nemail)
 

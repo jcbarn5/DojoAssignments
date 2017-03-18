@@ -6,7 +6,6 @@ app.secret_key = "burrito"
 def index():
     return render_template("index.html")
 
-
 @app.route('/ninja')
 def response():
     flag = True
@@ -18,28 +17,6 @@ def show_ninjas(headband):
     flag = False
     print headband
 
-
     return render_template("response.html", headband = headband, flag = flag)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.run(debug=True)
