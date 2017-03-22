@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninjas</title>
+  </head>
+  <body>
+    <h1>Ninjas</h1>
+
+    {% if display == True %}
+		{% load static from staticfiles %}
+		<img src="{% static 'DisappearingNinjasApp/Images/tmnt.png' %}">
+		<h1>Put a turtles favorite color in the url... If you don't put a color you'll witness the ruiner of childrens cartoons...</h1>
+		{% endif %}
+
+		{% if display == False %}
+			{% if color == 'blue' %}
+			<img src="{% static 'DisappearingNinjasApp/Images/leonardo.jpg' %}">
+
+			{% elif color == 'purple' %}
+			<img src="{% static 'DisappearingNinjasApp/Images/donatello.jpg' %}">
+
+			{% elif color == 'orange' %}
+			<img src="{% static 'DisappearingNinjasApp/Images/michelangelo.jpg' %}">
+
+			{% elif color == 'red' %}
+			<img src="{% static 'DisappearingNinjasApp/Images/raphael.jpg' %}">
+
+			{% else %}
+			<img src="{% static 'DisappearingNinjasApp/Images/notapril.jpg' %}">
+			{% endif %}
+		{% endif %}
+
+
+  </body>
+</html>

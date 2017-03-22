@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Your Current Gold Total: {{request.session.gold}}</h1>
+      <div class="FCHC">
+        <div class="Farm">
+          <h2>Farm</h2>
+          <p>(earns 10-20 gold)</p>
+          <form action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="place" value="farm">
+            <input type="submit" value="Find Gold!">
+          </form>
+        </div>
+        <div class="Cave">
+          <h2>Cave</h2>
+          <p>(earns 5-10 gold)</p>
+          <form action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="place" value="cave">
+            <input type="submit" value="Find Gold!">
+          </form>
+        </div>
+
+        <div class="House">
+          <h2>House</h2>
+          <p>(earns 2-5 gold)</p>
+          <form action="/process" method="Post">
+            {% csrf_token %}
+            <input type="hidden" name="place" value="house">
+            <input type="submit" value="Find Gold!">
+          </form>
+        </div>
+
+        <div class="Casino">
+          <h2>Casino</h2>
+          <p>(earns/takes 0-50 gold)</p>
+          <form action="/process" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="place" value="casino">
+            <input type="submit" value="Find Gold!">
+          </form>
+        </div>
+
+      </div>
+
+      <h1>RESET</h1>
+      <a href="/reset">Reset Gold</a>
+
+      </form>
+
+      <div class="activities">
+        <h3>Acivities</h3>
+
+        {% for item in request.session.activity %}
+				  <p>{{item}}</p>
+			  {% endfor %}
+      </div>
+
+
+    </div>
+  </body>
+</html>
