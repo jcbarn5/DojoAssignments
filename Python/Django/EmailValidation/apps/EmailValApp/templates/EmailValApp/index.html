@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Email Validation</title>
+  </head>
+  <body>
+    <h1>Enter email for jedi news you will, padawan.</h1>
+    <hr>
+    <div class="Message">
+      <h3>{{nope}}</h3>
+    </div>
+    <hr>
+    <form action="success" method="Post">
+      {% csrf_token %}
+      <p>Email: <input type="text" name="email"></p>
+      <input type="submit" value="Force Push!">
+    </form>
+  </body>
+</html>
