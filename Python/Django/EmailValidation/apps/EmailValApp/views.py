@@ -13,6 +13,7 @@ def success(request):
         'message': result[1],
         'email': Email.objects.all()
         }
+
         return render(request, 'EmailValApp/success.html', context)
     else:
         context = {
