@@ -19,7 +19,7 @@ def register(request):
 
     if result[0]:
         request.session['user_id'] = result[1].id
-        return render(request, 'LogAndRegApp/success.html')
+        return render(request, 'CoursesApp/index.html')
     else:
         for err in result[1]:
             messages.error(request, err)
@@ -34,7 +34,7 @@ def login(request):
 
     if result[0]:
         request.session['user_id'] = result[1].id
-        return render(request, 'LogAndRegApp/success.html')
+        return render(request, 'CoursesApp/index.html')
     else:
         for err in result[1]:
             messages.error(request, err)
