@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from models import User
+from . models import User
+from django.core.urlresolvers import reverse
 
 def index(request):
-
     return render(request, 'LogAndRegApp/index.html')
 
 def register(request):
@@ -15,11 +15,10 @@ def register(request):
     "cpass": request.POST['cpass'],
     }
     result = User.objects.validate(data)
-    print result[1]
 
     if result[0]:
         request.session['user_id'] = result[1].id
-        return render(request, 'LogAndRegApp/success.html')
+        return redirect('/')
     else:
         for err in result[1]:
             messages.error(request, err)
@@ -31,10 +30,11 @@ def login(request):
     'pass': request.POST['pass'],
     }
     result = User.objects.login(data)
+    
 
     if result[0]:
         request.session['user_id'] = result[1].id
-        return render(request, 'LogAndRegApp/success.html')
+        return redirect(reverse('secrets:index'))
     else:
         for err in result[1]:
             messages.error(request, err)
@@ -42,9 +42,12 @@ def login(request):
 def success(request):
     try:
         userObj = User.objects.get(id=request.session['user_id'])
-        context = {"user": userObj}
 
-        return render(request, "LogAndRegApp/success.html", context)
+        context = {
+        "user": userObj,
+        }
+
+        return render(request, "DojoSecretsApp/index.html", context)
     except:
         return redirect("/")
 

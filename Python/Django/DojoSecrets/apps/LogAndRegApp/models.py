@@ -13,16 +13,16 @@ class UserManager(models.Manager):
         hashed = bcrypt.hashpw(str(password), bcrypt.gensalt())
         if len(data['first_name']) < 2:
             flag = False
-            err.append("Your first name must be at least 2 characters long.")
+            errs.append("Your first name must be at least 2 characters long.")
         if len(data['last_name']) < 2:
             flag = False
-            err.append("Your last name must be at least 2 characters long.")
+            errs.append("Your last name must be at least 2 characters long.")
         if data['pass'] != data['cpass']:
             flag = False
-            err.append('Your password confirmation does not match.')
+            errs.append('Your password confirmation does not match.')
         if not EMAIL_REGEX.match(data['email']):
             flag = False
-            err.append('Your email is invalid.')
+            errs.append('Your email is invalid.')
     	if flag:
     		user = User.objects.create(first_name=data['first_name'], last_name=data['last_name'], email=data['email'], password=hashed)
     		return (True, user)

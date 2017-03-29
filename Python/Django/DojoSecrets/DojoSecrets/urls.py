@@ -1,4 +1,4 @@
-"""mergemodels URL Configuration
+"""DojoSecrets URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -15,9 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 
-# Where does namespace="login" and namespace="courses" come from?
 
 urlpatterns = [
-	url(r'^', include('apps.LogAndRegApp.urls', namespace="login")),
-    url(r'^courses/', include('apps.CoursesApp.urls', namespace="courses"))
+    url(r'^', include('apps.LogAndRegApp.urls', namespace="login")),
+    url(r'^secrets/', include('apps.DojoSecretsApp.urls', namespace="secrets"))
 ]

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Secrets</title>
+  </head>
+  <body>
+
+    <h1>Hello, {{all_secrets.author.first_name}}</h1>
+
+    <form action="{% url 'secrets:AddSecret' %}" method="Post">
+      {% csrf_token %}
+      <textarea name="secretbox" rows="8" cols="80" placeholder="Your secret here..."></textarea>
+      <input type="submit" value="Post">
+    </form>
+    <a href="{% url 'secrets:PopSecret' %}">Most Popular Secrets</a>
+    <h2>Recent Secrets...</h2>
+
+    <ul>
+
+      {% for item in all_secrets %}
+
+        <p>{{item.total_likes}}</p>
+
+			<li>{{item.secrets}}, {{item.created_at}}--<li></li> <a href="{% url 'secrets:AddLike' item.id %}">Like</a>--</li>
+
+			{% endfor %}
+      <li></li>
+
+    </ul>
+    <h3>Stuff to Add</h3>
+    <ul>
+
+      <li>item.likes count</li>
+      <li>if item.likes for user is true, you liked this message</li>
+      <li>if message user_id = logged in user_id, delete option</li>
+    </ul>
+
+
+  </body>
+</html>
