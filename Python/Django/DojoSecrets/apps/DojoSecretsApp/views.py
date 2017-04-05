@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from django.db.models import Count
 from . models import Secret, Like
 from ..LogAndRegApp.models import User
-# from django.db import IntegrityError
+
 
 
 

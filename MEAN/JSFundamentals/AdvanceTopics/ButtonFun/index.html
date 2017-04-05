@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Button Fun</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script charset="utf-8">
+    $( document ).ready(function() {
+        console.log( "ready!" );
+      $('button').click(function() {
+        $(this).toggleClass("red");
+      });
+      $('button').hover(function() {
+        $(this).toggleClass("green");
+      });
+    });
+    </script>
+    <style media="screen">
+      /*button:hover {
+        background: green;
+      }*/
+      .green {
+        background: green;
+      }
+      .red {
+        background: red;
+      }
+      button {
+        background: blue;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button type="button" name="button">
+      Hover N Click
+
+    </button>
+
+  </body>
+</html>

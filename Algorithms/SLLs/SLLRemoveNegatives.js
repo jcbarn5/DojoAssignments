@@ -32,9 +32,19 @@ function SLL(){
     if(!this.head){
       return false;
     }
-    while(this.head.val < 0){
+
+    while(this.head){
+      if (this.head.val < 0){
       this.head = this.head.next;
+      }
+      if(!this.head){
+        return false;
+      }
+      if (this.head.val >= 0){
+        break;
+      }
     }
+
     var current = this.head;
     while(current.next){
       if(current.next.val < 0){
@@ -50,15 +60,16 @@ function SLL(){
 
 var MyList = new SLL();
 
-MyList.AddFront(-1);
-MyList.AddFront(-2);
-MyList.AddFront(-3);
-MyList.AddFront(-1);
-MyList.AddFront(-1);
+// MyList.AddFront(-1);
+// MyList.AddFront(-2);
+// MyList.AddFront(-3);
+MyList.AddFront(88);
+// MyList.AddFront(-1);
+// MyList.AddFront(-1);
 MyList.AddFront(2);
-MyList.AddFront(-3);
+// MyList.AddFront(-3);
 MyList.AddFront(1);
 MyList.AddFront(2);
 MyList.RemoveNeg();
 
-console.log(MyList.ShowList());
+console.log(MyList.head);
