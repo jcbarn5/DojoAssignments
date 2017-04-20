@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Index</title>
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script>
+
+      var app = angular.module('app', ['ngRoute']);
+      app.config(function($routeProvider){
+        $routeProvider
+          .when('/users',{
+            templateUrl: 'partials/customizeUsers.html',
+            controller: 'CustomizeUsersController'
+          })
+          .when('/list',{
+            templateUrl: 'partials/userList.html',
+            controller: 'UserListsController'
+            })
+          .otherwise({
+            redirectTo: '/users'
+          });
+      });
+      ////////factory\\\\\\\\\\\
+      app.factory("userFactory",function(){
+        var factory = {};
+        var users = [
+          {fname: 'Mike', lname: 'Smith', favlang: 'JavaScript'},
+          {fname: 'John', lname: 'Brown', favlang: 'Ruby'},
+          {fname: 'Trey', lname: 'Jones', favlang: 'Python'},
+        ];
+        factory.getUsers = function (callback){
+          callback(users);
+        }
+
+        factory.addUser = function (data){
+          users.push(data);
+        }
+        factory.delete = function($index){
+          users.splice($index, 1);
+        }
+        return factory;
+      });
+      ////////controllers\\\\\\\\\\\
+      app.controller("CustomizeUsersController", ['$scope', '$location', 'userFactory', function($scope, $location, userFactory){
+         function newUser(data){
+            $scope.users = data;
+            $scope.newUser = {};
+         }
+         $scope.users = [];
+         //When this controller is loaded, fetch the user list
+         userFactory.getUsers(newUser);
+         //Pass new user info to the factory
+         $scope.addUser = function(){
+            userFactory.addUser($scope.newUser)
+            $scope.newUser = {}; //Reset our form
+            $location.url('/list');
+         }
+         //Delegate deleting user to the factory
+         $scope.delete = function($index){
+            userFactory.delete($index);
+         }
+      }])
+
+      //Inject userFactory into each controller
+      app.controller("UserListsController",['$scope', 'userFactory', function($scope, userFactory){
+         function newUser(data){
+            $scope.users = data;
+         }
+
+         $scope.users = [];
+
+         //When this controller is loaded, fetch the user list
+         userFactory.getUsers(newUser);
+      }])
+
+    </script>
+  </head>
+  <body>
+    <a href="#!/users">users</a> | <a href="#!/list">list</a>
+    <div ng-view=''>
+    </div>
+  </body>
+</html>

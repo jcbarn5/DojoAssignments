@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Sloth</title>
+  </head>
+  <body>
+    <h1>Edit Sloth</h1>
+    <form action="/updateSloth/<%= sloths._id %>" method="post">
+      <p>Sloth Name: <input type="text" name="name" value="<%= sloths.name %>"></p>
+      <p>Sloth Age: <input type="text" name="age" value="<%= sloths.age %>"></p>
+      <p><input type="submit" value="Slowly add Sloth"></p>
+    </form>
+    <hr>
+    <h1>Display all Animals</h1>
+
+      <ul>
+        <li><%= sloths.name %> -- <%= sloths.age %> -- <%= sloths._id %> </li>
+        <hr>
+      </ul>
+      <a href="/">Go Home</a>
+
+  </body>
+</html>

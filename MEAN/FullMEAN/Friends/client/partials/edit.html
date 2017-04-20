@@ -1,0 +1,10 @@
+<h1>Edit Friend</h1>
+
+<form>
+  <p>Name: <input type='text' ng-model='friend.name' value="{{friend.name}}"></p>
+  <p>Favorite Language: <input type='text' ng-model='friend.favoriteLanguage' value="{{friend.favoriteLanguage}}"></p>
+  <button type="submit" ng-click='update(friend._id)'>Edit Friend</button>
+
+</form>
+
+<a href="/#!/">All Users</a>

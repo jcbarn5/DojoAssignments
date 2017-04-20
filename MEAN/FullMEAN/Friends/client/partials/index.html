@@ -1,0 +1,25 @@
+  <h1>SHOW ALL FRIENDS</h1>
+
+  <table id =>
+    <thead>
+      <tr>
+        <td>Name | </td>
+        <td>Favorite Language | </td>
+        <td>Show | </td>
+        <td>Update | </td>
+        <td>Delete | </td>
+      </tr>
+    </thead>
+    <tr ng-repeat = "friend in friends | filter: filterFriend track by $index">
+      <td>{{friend.name}}</td>
+      <td>{{friend.favoriteLanguage}}</td>
+      <td><button><a href="/#!/show/{{friend._id}}">Show</a></button></td>
+      <td><button><a href="/#!/edit/{{friend._id}}">Update</a></button></td>
+      <td><button ng-click="delete(friend._id)">Delete</button></td>
+    </tr>
+  </table>
+  <a href="/#!/new">Create User</a>
+  <form>
+
+    <input type="text" ng-model='filterFriend' placeholder="filter...">
+  </form>

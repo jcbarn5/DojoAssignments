@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Users Controller</title>
+    <script src = 'bower_components/angular/angular.js'></script>
+    <script>
+    var app = angular.module('app', []);
+    app.controller('userController',['$scope', function($scope){
+      $scope.users = [
+        {fname: 'Mike', lname: 'Smith', favlang: 'JavaScript'},
+        {fname: 'John', lname: 'Smith', favlang: 'Ruby'},
+        {fname: 'Trey', lname: 'Smith', favlang: 'Python'},
+        {fname: 'India', lname: 'Smith', favlang: 'Ruby'},
+      ];
+      $scope.addUser = function (){
+        // add to the array
+        $scope.users.push($scope.newUser);
+        // clear the form values
+        $scope.newUser = {};
+      };
+      $scope.deleteUser = function (data){
+        var index = $scope.users.indexOf(data);
+        $scope.users.splice(index, 1);
+      };
+    }]);
+    </script>
+  </head>
+  <body>
+    <div ng-controller='userController'>
+      <h1>Users Controller</h1>
+      <form>
+        <p>First Name: <input type="text" ng-model="newUser.fname"></p>
+        <p>Last Name: <input type="text" ng-model="newUser.lname"></p>
+        <p>Favorite Language: <input type="text" ng-model="newUser.favlang"></p>
+        <p><input type="submit" ng-click="addUser()" value="Create User"></p>
+      </form>
+
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Fav Language</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat='u in users'>
+          <td>{{ u.fname }}</td>
+          <td>{{ u.lname }}</td>
+          <td>{{ u.favlang }}</td>
+          <td><a href="#" ng-click="deleteUser(u)">Delet User</a></td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+</html>

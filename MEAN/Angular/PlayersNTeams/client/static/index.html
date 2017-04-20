@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Users Controller</title>
+    <script src = 'angular/angular.js'></script>
+    <script src = 'angular-route/angular-route.js'></script>
+    <script src = 'angular-messages/angular-messages.js'></script>
+    <script>
+    var app = angular.module('app', ['ngRoute', 'ngMessages']);
+    app.config(function($routeProvider){
+      $routeProvider
+        .when("/players", {
+          templateUrl: "partial/players.html",
+          controller: 'PlayersController'
+        })
+        .when("/teams", {
+          templateUrl: "partial/teams.html",
+          controller: 'TeamsController'
+        })
+        .when("/associations", {
+          templateUrl: "partial/associations.html",
+          controller: 'AssociationsController'
+        })
+        .otherwise({
+          redirectTo: "/players"
+        })
+    });
+    /////////Player Factory\\\\\\\\\\
+    app.factory('playerFactory', function (){
+      var players = [
+        {name: 'Thom', team:'Cowboys'},
+        {name: 'Jerry', team:''},
+        {name: 'Garfield', team:''},
+        {name: 'Odie', team:'Eagles'},
+        ];
+      var factory = {};
+      factory.getPlayers = function(callback){
+        callback(players);
+      }
+      //Add new player to the list
+      factory.addPlayer = function(player){
+        player.team = ""; //New players don't belong to a team
+        players.push(player);
+      }
+      factory.removePlayer = function($index){
+        players.splice($index, 1);
+      }
+      factory.addPlayerToTeam = function(data){
+        players[data.playerIdx].team = data.team;
+      }
+      factory.removePlayerFromTeam = function($index){
+        players[$index].team = "";
+      }
+      return factory;
+      })
+      /////////Team Factory\\\\\\\\\\
+      app.factory("TeamFactory", function(){
+        var teams = [
+          {name:"Seahawks"},
+          {name:"49ers"},
+          {name:"Honeybadgers"}
+        ];
+        var factory = {};
+        factory.getTeams = function(callback){
+          callback(teams);
+        }
+        factory.addTeam = function(team){
+          teams.push(team);
+        }
+        factory.removeTeam = function($index){
+          teams.splice(teams.indexOf($index), 1);
+        }
+        return factory;
+      })
+    /////////Team Controller\\\\\\\\\\
+    app.controller("TeamsController", function($scope, TeamFactory){
+       $scope.teams = [];
+       TeamFactory.getTeams(function(teams){
+          $scope.teams = teams;
+       })
+       $scope.addTeam = function(){
+          TeamFactory.addTeam($scope.newTeam)
+          $scope.newTeam = {}; //Reset newTeam form
+       }
+       $scope.removeTeam = function($index){
+          TeamFactory.removeTeam($index);
+       }
+    })
+    /////////Players Controller\\\\\\\\\\
+    app.controller("PlayersController", function($scope, playerFactory){
+       $scope.players = [];
+       playerFactory.getPlayers(function(players){
+          $scope.players = players;
+       })
+       $scope.addPlayer = function(){
+         console.log('boop');
+          playerFactory.addPlayer($scope.newPlayer)
+          $scope.newPlayer = {}; //Reset newPlayer form
+       }
+       $scope.removePlayer = function($index){
+          playerFactory.removePlayer($index);
+       }
+    })
+    /////////Association Controller\\\\\\\\\\
+    app.controller("AssociationsController", function($scope, playerFactory, TeamFactory){
+       $scope.players = [];
+       $scope.teams = [];
+       playerFactory.getPlayers(function(players){
+          $scope.players = players;
+       })
+       TeamFactory.getTeams(function(teams){
+          $scope.teams = teams;
+       })
+       $scope.addPlayerToTeam = function(){
+          playerFactory.addPlayerToTeam($scope.newAssoc);
+       }
+       $scope.removePlayerFromTeam = function($index){
+          playerFactory.removePlayerFromTeam($index);
+       }
+    })
+      ///////////html that displays about all partial\\\\\\\\\\\
+      </script>
+  </head>
+  <body>
+    <a href="#!/players">Players</a> | <a href="#!/teams">Teams</a> | <a href="#!/associations">Associations</a>
+    <div ng-view=''>
+    </div>
+  </body>
+</html>

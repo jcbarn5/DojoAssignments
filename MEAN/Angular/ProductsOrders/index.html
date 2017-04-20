@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Users Controller</title>
+    <script src = 'bower_components/angular/angular.js'></script>
+    <script>
+    var app = angular.module('app', []);
+    // Create a factory (attached to this module)
+    app.factory('productFactory', function (){
+        var products = [
+          {name: 'Mouse', price: 14.99, quantity: 50},
+          {name: 'Iron', price: 14.99, quantity: 50},
+          {name: 'Shoes', price: 14.99, quantity: 50},
+          {name: 'Hat', price: 14.99, quantity: 50},
+          ];
+          var factory = {};
+        factory.getProducts = function (callback){
+            callback(products);
+        }
+        factory.addProduct = function (data){
+          products.push(data);
+        }
+        factory.deleteProduct = function (data){
+          var index = products.indexOf(data);
+            products.splice(index, 1);
+        }
+        factory.buyProduct = function(data, callback){
+            	if (products[data].quantity > 0){
+    					products[data].quantity -= 1;
+              callback()
+    				}
+            console.log(data);
+          }
+        return factory;
+    });
+    app.controller('productController', ['$scope', 'productFactory', function ($scope, productFactory){
+        $scope.products = [];
+        productFactory.getProducts(function (data){
+            $scope.products = data;
+        })
+        $scope.addProduct = function (){
+          productFactory.addProduct($scope.newProduct)
+            $scope.newProduct = {};
+          }
+        $scope.deleteProduct = function (data){
+          productFactory.deleteProduct(data)
+          }
+    }])
+    app.controller('ordersController', ['$scope', 'productFactory', function($scope, productFactory)
+    {
+			$scope.products = [];
+			function index(){
+        productFactory.getProducts(function(data)
+        {
+				$scope.products = data;
+      })
+      }
+      index()
+			$scope.buyProduct = function(product){
+				productFactory.buyProduct(product, index);
+
+      }
+
+			}])
+    </script>
+  </head>
+  <body>
+    <div ng-controller='productController'>
+      <h1>Products Controller</h1>
+      <form>
+        <p>Product Name: <input type="text" ng-model="newProduct.name"></p>
+        <p>Product Price: <input type="number" ng-model="newProduct.price"></p>
+        <input type="hidden" ng-init="newProduct.quantity= '50'" ng-model="newProduct.quantity">
+        <p><input type="submit" ng-click="addProduct()" value="Add Product"></p>
+      </form>
+      <table border>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Qty Available</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat='p in products'>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price | currency }}</td>
+          <td><a href="#" ng-click="deleteProduct(p)">Delete Product</a></td>
+        </tr>
+      </table>
+      <h2>Orders Controller</h2>
+    </div>
+    <div ng-controller='ordersController'>
+        <table border>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Qty Available</th>
+          <th>Actions</th>
+        </tr>
+        <tr ng-repeat='p in products track by $index'>
+          <td>{{ p.name }}</td>
+          <td>{{ p.price | currency }}</td>
+          <td>{{ p.quantity }}</td>
+          <td><a href="#" ng-click="buyProduct($index)">Buy</a></td>
+        </tr>
+      </table>
+
+    </div>
+  </body>
+</html>

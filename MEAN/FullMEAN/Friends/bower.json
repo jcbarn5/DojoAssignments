@@ -1,0 +1,21 @@
+{
+  "name": "Friends",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jacob Barnes <jacob.barnes8@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jcbarn5/DojoAssignments",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}
