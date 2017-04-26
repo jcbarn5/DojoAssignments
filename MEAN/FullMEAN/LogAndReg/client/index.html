@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Log and Reg</title>
+    <link rel="stylesheet" href="main.css">
+    <script src = 'angular/angular.js' charset="utf-8"></script>
+    <script src = 'angular-route/angular-route.js' charset="utf-8"></script>
+    <script src = 'angular-messages/angular-messages.js' charset="utf-8"></script>
+    <script src = 'angular-cookies/angular-cookies.js'></script>
+    <script src= 'app.js' charset="utf-8"></script>
+  </head>
+  <body ng-controller = 'logController'>
+    <form ng-model = "registration" ng-submit = "register()">
+      <!-- {{errors.first_name.message}} -->
+      <p><input type="text" ng-model = "registration.first_name" placeholder= "first name"></p>
+      <!-- {{errors.last_name.message}} -->
+      <p><input type="text"  ng-model = "registration.last_name" placeholder= "last name"></p>
+      <!-- {{errors.email.message}} -->
+      <p><input type="email"  ng-model = "registration.email" placeholder= "email"></p>
+      <!-- {{errors.password.message}} -->
+      <p><input type="password"  ng-model = "registration.password" placeholder= "password"></p>
+      <p><input type="password" ng-model = "registration.confirm_password" placeholder= "confirm password"></p>
+      <!-- {{errors.birthday.message}} -->
+      <p><input type="date" ng-model = "registration.birthday"></p>
+      <p><input type="submit" value = "register"></p>
+    </form>
+  </hr>
+  </hr>
+    <form ng-model = "userLogin" ng-submit = "login()">
+      <!-- {{errors.login_reg.message}} -->
+      <p><input type="email"  ng-model = "userLogin.email" placeholder= "email"></p>
+      <p><input type="password"  ng-model = "userLogin.password" placeholder= "password"></p>
+      <input type="submit" value = "login">
+    </form>
+  </body>
+</html>

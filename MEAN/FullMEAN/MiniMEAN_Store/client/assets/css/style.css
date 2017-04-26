@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.newProduct {
+  width: 500px;
+  display: inline-block;
+}
+
+/*.products {
+  width: 600px;
+  display: inline-block;
+}*/

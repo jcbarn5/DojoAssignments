@@ -1,0 +1,39 @@
+<div ng-controller='ordrCtrl'>
+  <h1>Orders Page</h1>
+
+<h3>Add a new order</h3>
+
+<form>
+  <p>Customer: <select ng-model='newOrder._customer'>
+    <option ng-repeat='customer in customers' value="{{customer._id}}" ng-model='newOrder._customer'>{{customer.name}}</option>
+  </select></p>
+  <p>Product: <select ng-model='newOrder._product'>
+    <option ng-repeat='product in products' value="{{product._id}}" ng-model='newOrder._product'>{{product.name}}</option>
+  </select></p>
+  <p>Quantity: <input type="number" placeholder="1" ng-model='newOrder.quantity'></p>
+  <button type="button" ng-click='createOrder()'>Make Order</button>
+</form>
+<hr>
+<input type="text" placeholder='Search name...' ng-model='orderFilter'>
+<table>
+  <thead>
+    <tr>
+      <th>Customer | </th>
+      <th>Product | </th>
+      <th>Quantity | </th>
+      <th>Date | </th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat='order in orders | filter:orderFilter'>
+      <td>{{order._customer.name}}</td>
+      <td>{{order._product.name}}</td>
+      <td>{{order.quantity}}</td>
+      <td>{{order.created_at | date: "MMM. dd, yyyy"}}</td>
+      <td><button ng-click='deleteOrder(order._id)'>Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
