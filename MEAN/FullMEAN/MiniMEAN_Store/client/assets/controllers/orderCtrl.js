@@ -39,5 +39,4 @@ app.controller('ordrCtrl', function($scope, storeFactory) {
       .then( getOrders )
   }
 
-
 });

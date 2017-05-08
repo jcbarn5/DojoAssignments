@@ -14,9 +14,6 @@ app.controller('prodCtrl', function($scope, storeFactory) {
       .then(function(){ $scope.newProduct = {};
     }).then(index)
   }
-  $scope.deleteProduct = function(id){
-  StoreFactory.deleteProduct(id)
-  .then( fetchProducts )
-}
+
 
 });

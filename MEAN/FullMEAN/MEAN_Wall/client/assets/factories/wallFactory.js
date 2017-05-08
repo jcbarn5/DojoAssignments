@@ -22,6 +22,7 @@ app.factory('wallFactory', ['$http', function($http){
             console.log(err);
         });
     }
+    ///////
     factory.createMessage = function(message, id, callback){
         $http.post("/messages/"+id+"/create", message)
         .then(function(returned_data){
@@ -29,10 +30,8 @@ app.factory('wallFactory', ['$http', function($http){
                 callback(returned_data.data);
             }
         })
-        .catch(function(err){
-            console.log(err);
-        });
     }
+    ///////////
     factory.createComment = function(comment, user_id, message_id, callback){
         $http.post('/'+user_id+'/messages/'+message_id+'/create', comment)
         .then(function(returned_data){

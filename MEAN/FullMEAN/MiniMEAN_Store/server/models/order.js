@@ -11,14 +11,12 @@ var OrderSchema = new Schema({
 
 
 OrderSchema.statics.removeOrdersByCustomerId = function(customerId, cb) {
-  // Still need to add pending quantities back to orders...
   this.remove({ _customer: customerId}, function(err){
     return cb(err);
   })
 };
 
 OrderSchema.statics.removeOrdersByProductId = function(productId, cb) {
-  // Still need to add pending quantities back to orders...
   this.remove({ _product: productId}, function(err){
     return cb(err);
   })

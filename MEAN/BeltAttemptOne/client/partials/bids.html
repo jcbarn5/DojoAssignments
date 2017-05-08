@@ -1,0 +1,48 @@
+<div ng-controller="bidController" class='wrapper'>
+	<h1>Bid Now!</h1>
+	<a href="#" ng-click='logout()'>Logout</a>
+	<div class="products">
+		<div class="product1">
+			<img src="../style/car.jpg" alt="">
+			<p>ERRORS</p>
+			<input type="hidden" value='{{products}}' ng-model='newCarBid.car'>
+			<input type="text" ng-model='newCarBid.bid'>
+			<button type="button" ng-click="createBid()">Bid</button>
+			<h3>Current Bids:</h3>
+			<div class="bids1" ng-repeat='bids in carBid'>
+				<ul>
+					<li>{{bids._user}}{{bids.bid}}</li>
+				</ul>
+			</div>
+			<input type="text" ng-model='carBidFilter' placeholder="filter...">
+		</div>
+		<div class="product2">
+			<img src="../style/truck.jpg" alt="">
+			<p>ERRORS</p>
+			<input type="text" ng-model='newBid.bid'>
+			<button type="button" ng-click="">Bid</button>
+			<h3>Current Bids:</h3>
+			<div class="bids2">
+				<ul>
+					<li>Test</li>
+				</ul>
+			</div>
+			<input type="text" placeholder="filter...">
+		</div>
+		<div class="product3">
+			<img src="../style/motorcycle.jpg" alt="">
+			<p>ERRORS</p>
+			<input type="text" ng-model='newBid.bid'>
+			<button type="button" ng-click="">Bid</button>
+			<h3>Current Bids:</h3>
+			<div class="bids3">
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+			<input type="text" placeholder="filter...">
+		</div>
+		<button type="button" name="button" class='end'>End Bid</button>
+	</div>
+
+</div>

@@ -20,9 +20,11 @@ app.factory('storeFactory', function($http){
       return $http.get('/customers/recent')
         .then(function(res){ return res.data; })
     }
+    ////////
     factory.createCustomer = function(newCustomer){
       return $http.post('/customers', newCustomer)
     }
+    ////////
     factory.deleteCustomer = function(id){
       return $http.delete(`/customers/${id}`)
     }

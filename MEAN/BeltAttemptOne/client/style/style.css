@@ -1,0 +1,26 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  border: 1px dotted red;
+}
+.wrapper {
+  width: 1000px;
+}
+.product1 {
+  width: 250px;
+  display: inline-block;
+}
+.product2 {
+  width: 250px;
+  display: inline-block;
+}
+.product3 {
+  width: 250px;
+  display: inline-block;
+}
+.bids3 {
+  text-align: left;
+}
+.end {
+  display: block;
+}

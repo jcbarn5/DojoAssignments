@@ -1,0 +1,8 @@
+<div ng-controller="newController">
+	<h1>Login and Register</h1>
+	<p style="background-color: red;" ng-repeat="error in errors">{{error.message}}</p>
+	<form>
+	    <p>Name: <input type="text" ng-model="newUser.name"></p>
+	    <input type="submit" value="Sign-In/Register" ng-click="login()">
+	</form>
+</div>
