@@ -5,7 +5,7 @@ class BankAccount
 
   def initialize
     @account_number = create_account
-    @checking = 0
+    @checking = 50
     @saving = 0
     @@bank_accounts += 1
     @interest_rate = 0.01
@@ -24,7 +24,7 @@ class BankAccount
   def withdral(account, amount)
     if account.downcase == "checking"
       if @checking - amount < 0
-        raise "Not enough funds, you have #{@checking} in this account"
+        raise "Not enough funds"
         #gives RuntimeError
       else
         @checking -= amount

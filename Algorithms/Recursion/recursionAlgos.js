@@ -91,31 +91,30 @@ function Anagram(str){
   var marr =[];
   var str1 = '';
   var str2 = str;
-  console.log(str2);
   AnaHelp(str1, str2, marr);
   console.log(marr);
   return marr;
 }
 
 function AnaHelp(str1, str2, marr){
-  console.log(str2);
   if(str2.length == 0){
     marr.push(str1);
     return marr;
   }
   else{
     for (var i = 0; i < str2.length; i++) {
-      // console.log(str2);
       var x = str2.split("");
-      // console.log(str2);
-      // console.log(x);
-      AnaHelp(str1+str2[i], x.splice(i,1).join(""), marr);
+      x.splice(i,1);
+      AnaHelp(str1+str2[i], x.join(""), marr);
     }
     return marr;
   }
 }
 
-Anagram("dog");
+Anagram("tiger");
+
+
+
 // var string = "test"
 // var x = string.split("")
 // x.splice(1,1)
