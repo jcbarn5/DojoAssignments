@@ -87,31 +87,31 @@
 // rBS(myArr, 9);
 
 //Anagrams
-function Anagram(str){
-  var marr =[];
-  var str1 = '';
-  var str2 = str;
-  AnaHelp(str1, str2, marr);
-  console.log(marr);
-  return marr;
-}
+// function Anagram(str){
+//   var marr =[];
+//   var str1 = '';
+//   var str2 = str;
+//   AnaHelp(str1, str2, marr);
+//   console.log(marr);
+//   return marr;
+// }
+//
+// function AnaHelp(str1, str2, marr){
+//   if(str2.length == 0){
+//     marr.push(str1);
+//     return marr;
+//   }
+//   else{
+//     for (var i = 0; i < str2.length; i++) {
+//       var x = str2.split("");
+//       x.splice(i,1);
+//       AnaHelp(str1+str2[i], x.join(""), marr);
+//     }
+//     return marr;
+//   }
+// }
 
-function AnaHelp(str1, str2, marr){
-  if(str2.length == 0){
-    marr.push(str1);
-    return marr;
-  }
-  else{
-    for (var i = 0; i < str2.length; i++) {
-      var x = str2.split("");
-      x.splice(i,1);
-      AnaHelp(str1+str2[i], x.join(""), marr);
-    }
-    return marr;
-  }
-}
-
-Anagram("tiger");
+// Anagram("tiger");
 
 
 
@@ -121,8 +121,31 @@ Anagram("tiger");
 // console.log(x)
 // console.log(string)
 
+//Rising Squares
 
-
+// function riseSq(num){
+//   var i = num;
+//   var ans = [];
+//   rSH(i, ans);
+//   console.log(ans);
+//   return ans;
+// }
+//
+// function rSH(i,ans){
+//   if(i == 0){
+//     return ans;
+//   }
+//   if(i % 2 == 0){
+//     ans.push(i*i);
+//     return rSH(--i,ans);
+//   }
+//   if(i % 2 == 1){
+//     ans.unshift(i*i);
+//     return rSH(--i,ans);
+//   }
+// }
+//
+// riseSq(4);
 
 
 
