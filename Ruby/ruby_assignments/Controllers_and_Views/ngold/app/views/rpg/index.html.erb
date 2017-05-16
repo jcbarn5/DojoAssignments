@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <form action="/reset" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+    <button type="submit">Reset Game</button>
+  </form>
+  <p>Your Gold: <%= @gold %> </p>
+  <div class="locations">
+    <form action="/bets" method="post">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+      <input type="hidden" name="building" value="farm">​
+      <ul>​
+        <li><strong>Farm</strong></li>​
+        <li>(earns 10-20 golds)</li>​
+        <li><input type="submit" value="Find Gold!" /></li>​
+      </ul>​
+    </form>
+    <form action="/bets" method="post">​
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+			<input type="hidden" name="building" value="cave">​
+			<ul>​
+				<li><strong>Cave</strong></li>​
+				<li>(earns 5-10 golds)</li>​
+				<li><input type="submit" value="Find Gold!" /></li>​
+			</ul>​
+		</form>​
+		<form action="/bets" method="post">​
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+			<input type="hidden" name="building" value="house">​
+      <ul>​
+        <li><strong>House</strong></li>​
+        <li>(earns 2-5 golds)</li>​
+        <li><input type="submit" value="Find Gold!" /></li>​
+      </ul>​
+    </form>​
+    <form action="/bets" method="post">​
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+      <input type="hidden" name="building" value="casino">​
+      <ul>​
+        <li><strong>Casino</strong></li>​
+        <li>(earns/takes 0-50 golds)</li>​
+        <li><input type="submit" value="Find Gold!" /></li>​
+      </ul>​
+    </form>​
+  </div>
+  <div>
+    <p>Activies: </p>
+    <div class="activities">
+      <% @activities.reverse.each do |i| %>
+        <% if i.include?("Earned") %>
+          <p class="earned"> <%= i %>
+        <% else %>
+          <p class="lost"> <%= i %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

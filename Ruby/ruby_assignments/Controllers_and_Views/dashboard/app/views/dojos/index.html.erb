@@ -1,0 +1,35 @@
+<h1>Listing <%= @dojos.count %> Dojos</h1>
+
+<% if flash[:notice] %>
+	<p><%= flash[:notice] %></p>
+<% end %>
+
+<table>
+  <tr>
+    <th>Branch</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Actions</th>
+  </tr>
+  <% @dojos.each do |i| %>
+  <tr>
+    <td><%= i.branch %>-</td>
+    <td><%= i.street %>-</td>
+    <td><%= i.city %>-</td>
+    <td><%= i.state %></td>
+    <td>
+      <a href="dojos/show/<%= i.id %>">Show</a> |
+      <a href="dojos/edit/<%= i.id %>">Edit</a> |
+      <form action="dojos/<%= i.id %>" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+      </form> |
+      <a href="dojos/<%= i.id %>/students">Students</a>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<a href="dojos/new">New Dojo</a>
