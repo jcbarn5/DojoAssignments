@@ -12,42 +12,42 @@
 // }
 
 //Got Any Grapes
-// function gHelper(arr, i, sum){
-//   if(i >= arr.length-1 || i >= arr.length-2){
-//     return sum;
-//   }
-//   else{
-//     var right = sum;
-//     var left = sum;
-//     left = gHelper(arr, i+2, (sum+arr[i+2]))
-//     if(arr[i+3]){
-//       right = gHelper(arr, i+3, (sum+arr[i+3]))
-//     }
-//     if(left > right){
-//       sum = left;
-//     }
-//     else{
-//       sum = right;
-//     }
-//     return sum;
-//   }
-// }
-//
-// function Grapes(arr){
-//   var i = 0;
-//   var sum = arr[i];
-//   var sum2 = arr[i+1];
-//   sum = gHelper(arr, i, sum);
-//   sum2 = gHelper(arr, i+1, sum2);
-//   if(sum>sum2){
-//     console.log(sum);
-//     return sum;
-//   }
-//   else{
-//     console.log(sum2);
-//     return sum2;
-//   }
-// }
+function gHelper(arr, i, sum){
+  if(i >= arr.length-1 || i >= arr.length-2){
+    return sum;
+  }
+  else{
+    var right = sum;
+    var left = sum;
+    left = gHelper(arr, i+2, (sum+arr[i+2]))
+    if(arr[i+3]){
+      right = gHelper(arr, i+3, (sum+arr[i+3]))
+    }
+    if(left > right){
+      sum = left;
+
+    else{
+      sum = right;
+    }
+    return sum;
+  }
+}
+
+function Grapes(arr){
+  var i = 0;
+  var sum = arr[i];
+  var sum2 = arr[i+1];
+  sum = gHelper(arr, i, sum);
+  sum2 = gHelper(arr, i+1, sum2);
+  if(sum>sum2){
+    console.log(sum);
+    return sum;
+  }
+  else{
+    console.log(sum2);
+    return sum2;
+  }
+}
 // // var myArr = [20];
 // // Grapes(myArr);
 //

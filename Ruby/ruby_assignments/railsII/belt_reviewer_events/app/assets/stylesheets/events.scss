@@ -1,0 +1,35 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.welcome {
+  margin: 10px 0px 0px 10px;
+}
+
+.add_event {
+  padding: 10px;
+}
+
+form {
+  display: inline-block;
+}
+
+.show_event {
+  display: inline-block;
+  width: 200px;
+  border-right: black solid 5px;
+}
+
+.comments {
+  display: inline-block;
+  float: right;
+  margin-right: 350px;
+}
+
+.actual_comments{
+  overflow: scroll;
+  border: solid black 2px;
+  margin: 5px;
+  height: 400px;
+  width: 450px;
+}

@@ -8,6 +8,7 @@ class DojosController < ApplicationController
   end
 
   def create
+    # something = Dojo.create(branch: params[:branch], )
     @dojo = Dojo.new(dojo_params)
 
     if @dojo.save

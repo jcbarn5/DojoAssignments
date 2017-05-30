@@ -1,0 +1,29 @@
+<h1>Dojo Secrets</h1>
+<h4>Sign Up or Log In</h4>
+<hr>
+
+<h1>|||New User|||</h1>
+<form action="/sessions/" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Name: <input type="text" name="user[name]"></p>
+  <p>Email: <input type="text" name="user[email]"></p>
+  <p>Password: <input type="password" name="user[password]"></p>
+  <p>Confirm Password: <input type="password" name="user[password_confirmation]"></p>
+  <p><input type="submit" value="Submit"></p>
+</form>
+
+<hr>
+
+<h1>||||||Log In||||||</h1>
+<form action="/sessions/login" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Email: <input type="text" name="email"></p>
+  <p>Password: <input type="password" name="password"></p>
+  <p><input type="submit" value="Submit"></p>
+</form>
+
+<hr>
+<hr>
+
+<h3>Example of a secret:</h3>
+<i>"I pooted"</i>

@@ -1,0 +1,33 @@
+<h1>Hi <%= current_user.first_name %></h1>
+<a href="/users/show/<%= current_user.id %>">Go to Dashboard</a>
+
+<hr>
+<h2>All Products: </h2>
+<hr>
+
+<table border>
+  <tr>
+    <th>Product</th>
+    <th>Seller</th>
+    <th>Date Posted</th>
+    <th>Amount</th>
+    <th>Action</th>
+  </tr>
+  <% @products.each do |product| %>
+    <% unless product.user == current_user%>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.user.first_name %> <%= product.user.last_name %></td>
+    <td><%= product.created_at %></td>
+    <td>$<%= product.price %></td>
+    <td>
+      <form action="/buys/create/<%= product.id %>/" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="Buy">
+      </form>
+    </td>
+  </tr>
+    <% end %>
+  <% end %>
+
+</table>

@@ -1,0 +1,25 @@
+// Place all the styles related to the Sectrets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#likes {
+  display: inline;
+}
+
+.likebutton {
+  display: inline;
+}
+
+.secretborder{
+  border: 1px black solid;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.unlikebutton {
+  display: inline;
+}
+
+.deletebutton {
+  display: inline;
+}

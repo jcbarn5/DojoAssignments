@@ -1,8 +1,8 @@
 <h1>Editing <%= @dojo.branch %> </h1>
 
 <% if flash[:errors] %>
-	<% flash[:errors].each do |e| %>
-		<p><%= e %></p>
+	<% flash[:errors].each do |i| %>
+		<p><%= i %></p>
 	<% end %>
 <% end %>
 
@@ -11,7 +11,7 @@
   <input type="hidden" name="_method" value="patch">
 	<p>
 		<label>Branch:</label>
-		<input type="text" name=dojo[branch] value="<%= @dojo.branch %>">
+		<input type="text" name=dojo[branch] value="<%= @dojo.branch %>" required>
 	</p>
 	<p>
 		<label>Street:</label>

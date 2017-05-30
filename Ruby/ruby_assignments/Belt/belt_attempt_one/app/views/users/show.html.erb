@@ -1,0 +1,86 @@
+<h1>Hi <%= current_user.first_name %></h1>
+<a href="/products/">Go to All Products</a>
+
+<h3>Sell Product</h3>
+<form action="/products/create/" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Name: <input type="text" name="name"></p>
+  <p>Amount: <input type="numer" name="price" placeholder="0.00"></p>
+  <input type="submit" value="Sell">
+</form>
+
+<h4>Your products that are not yet sold:</h4>
+<table border>
+  <tr>
+    <th>Product</th>
+    <th>Date Posted</th>
+    <th>Amount</th>
+    <th>Action</th>
+  </tr>
+  <% @unsold.each do |product| %>
+    <% unless Buy.exists?(product) %>
+
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.created_at %></td>
+    <td>$<%= product.price %></td>
+    <td>
+      <form action="/products/destroy/<%= product.id %>/" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Remove">
+      </form>
+    </td>
+  </tr>
+
+    <% end %>
+  <% end %>
+</table>
+
+<h4>Sales</h4>
+
+<table border>
+  <tr>
+    <th>Product</th>
+    <th>Date Bought</th>
+    <th>Buyer</th>
+    <th>Amount</th>
+  </tr>
+  <% @bought.each do |bought| %>
+  <% unless User.find(bought.user_id) == current_user %>
+
+  <tr>
+    <td><%= Product.find(bought.product_id).name %></td>
+    <td><%= Product.find(bought.product_id).updated_at %></td>
+    <td><%= User.find(bought.user_id).first_name %> <%= User.find(bought.user_id).last_name %></td>
+    <td>$<%= Product.find(bought.product_id).price %></td>
+    </td>
+  </tr>
+    <% end %>
+  <% end %>
+</table>
+  <p class="total">Total: $<%= @total %></p>
+
+  <h4>Purchases</h4>
+<table border>
+  <tr>
+    <th>Product</th>
+    <th>Date Bought</th>
+    <th>Seller</th>
+    <th>Amount</th>
+  </tr>
+  <% @sold.each do |sold| %>
+  <% unless User.find(sold.user_id) == current_user %>
+
+  <tr>
+    <td><%= Product.find(sold.product_id).name %></td>
+    <td><%= Product.find(sold.product_id).updated_at %></td>
+    <td><%= User.find(sold.user_id).first_name %> <%= User.find(sold.user_id).last_name %></td>
+    <td>$<%= Product.find(sold.product_id).price %></td>
+    </td>
+  </tr>
+    <% end %>
+  <% end %>
+  <table>
+
+<p class="total">Total: $<%= @total %></p>
