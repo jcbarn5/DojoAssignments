@@ -17,8 +17,9 @@
     <th>Amount</th>
     <th>Action</th>
   </tr>
-  <% @unsold.each do |product| %>
-    <% unless Buy.exists?(product) %>
+  <% @products.each do |product| %>
+      <% unless product.user != current_user%>
+    <% unless @sold.where("product_id=?", product.id).length > 0 %>
 
   <tr>
     <td><%= product.name %></td>
@@ -33,6 +34,7 @@
     </td>
   </tr>
 
+  <% end %>
     <% end %>
   <% end %>
 </table>
@@ -69,14 +71,14 @@
     <th>Seller</th>
     <th>Amount</th>
   </tr>
-  <% @sold.each do |sold| %>
-  <% unless User.find(sold.user_id) == current_user %>
+  <% @bought.each do |bought| %>
+  <% unless User.find(bought.user_id) != current_user %>
 
   <tr>
-    <td><%= Product.find(sold.product_id).name %></td>
-    <td><%= Product.find(sold.product_id).updated_at %></td>
-    <td><%= User.find(sold.user_id).first_name %> <%= User.find(sold.user_id).last_name %></td>
-    <td>$<%= Product.find(sold.product_id).price %></td>
+    <td><%= Product.find(bought.product_id).name %></td>
+    <td><%= Product.find(bought.product_id).updated_at %></td>
+    <td><%= User.find(bought.user_id).first_name %> <%= User.find(bought.user_id).last_name %></td>
+    <td>$<%= Product.find(bought.product_id).price %></td>
     </td>
   </tr>
     <% end %>

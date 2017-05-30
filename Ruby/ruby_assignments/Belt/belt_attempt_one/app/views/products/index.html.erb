@@ -15,6 +15,7 @@
   </tr>
   <% @products.each do |product| %>
     <% unless product.user == current_user%>
+      <% unless @sold.where("product_id=?", product.id).length > 0 %>
   <tr>
     <td><%= product.name %></td>
     <td><%= product.user.first_name %> <%= product.user.last_name %></td>
@@ -27,6 +28,7 @@
       </form>
     </td>
   </tr>
+      <% end %>
     <% end %>
   <% end %>
 

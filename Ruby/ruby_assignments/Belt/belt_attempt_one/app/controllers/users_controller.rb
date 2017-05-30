@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def show
     @products = Product.all
-    @unsold = Product.where(user: current_user)
     @bought = Buy.all
     @total = Product.sum(:price)
     @sold = Sold.all
