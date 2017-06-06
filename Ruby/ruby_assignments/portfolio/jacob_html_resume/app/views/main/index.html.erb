@@ -1,4 +1,4 @@
-<body>
+<body class="orange darken-4">
   <nav class="red darken-4" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="https://github.com/jcbarn5" class="brand-logo">Jacob Barnes</a>
@@ -10,7 +10,10 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#links">Links</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -21,21 +24,29 @@
       <div class="container">
         <br><br>
         <img src="/assets/profile_pic.jpg" class="responsive-img z-depth-5" style="width: 200px; margin: 0 auto; display: block; border-radius: 5%;">
-        <h1 class="header center red-text text-darken-4 black">Jacob Barnes</h1>
+        <h1 class="center white-text text-darken-1" style="text-shadow: -1px 1px 15px #000000;">Jacob Barnes</h1>
+        <h5 class="center white-text text-darken-4" style="text-shadow: -1px 1px 15px #000000;">Full Stack Developer</h5>
         <div class="row center">
-          <h5 class="header center red-text text-darken-4 black">Full Stack Developer</h5>
-        </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light yellow darken-4">Resume</a>
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light yellow darken-4">Download</a>
+          <a href="#resume" class="btn-large waves-effect waves-light yellow darken-4 hoverable">Resume</a>
+
+          <div id="resume" class="modal">
+            <div class="modal-content center">
+              <object data="Jacob_Barnes_Resume.pdf" type="application/pdf" width="700px" height="1000px"></object>
+            </div>
+          </div>
+
+          <a href="Jacob_Barnes_Resume.pdf" download="Jacob_Barnes_Resume.pdf" class="btn-large waves-effect waves-light yellow darken-4 hoverable">Download</a>
         </div>
         <br><br>
       </div>
     </div>
-    <div class="parallax"><img src="/assets/ret_tech.jpg" alt="Unsplashed background img 1"></div>
+
+    <div class="parallax"><img src="/assets/ret_tech.jpg" alt="Unsplashed background img 1" style="filter: brightness(80%);"></div>
   </div>
+
   <div id="skills" class="container orange darken-4">
     <h2 class="center orange darken-4" style="color: white;">SKILLS</h2>
+    <hr style="height: 4px; background:white;">
     <div class="section">
 
       <!--   Icon Section   -->
@@ -118,65 +129,112 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/assets/glasses.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="/assets/ret_tech.jpg" alt="Unsplashed background img 2" style="filter: brightness(80%);"></div>
   </div>
 
-  <div id="projects" class="container red">
+  <div id="projects" class="container orange darken-4">
     <div class="section">
 
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>PROJECTS</h4>
-          <p class="left-align light">project divs need to go here</p>
+              <div class="row">
+              <div class="col s12 m6 center">
+                <div class="card hoverable z-depth-3">
+                  <div class="card-image">
+                    <img src="exp2.png">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title" style="background-color: #9ccc65; color: white;">{EXP}</span>
+                    <p style="font-size: 20px;">MEAN project that allows users to login/register and create events for other users to join (Google maps API integration).</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="https://github.com/dbramarov/exp_project" target="_blank">View on Github</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col s12 m6 center">
+                <div class="card hoverable z-depth-3">
+                  <div class="card-image">
+                    <img src="ministore2.png">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title" style="background-color: #9ccc65; color: white;">Market Exchange</span>
+                    <p style="font-size: 20px;">MEAN project that allows users to login/register and buy/sell products with other users (AngularJS). **(UNDER CONSTRUCTION)**</p>
+                  </div>
+                  <div class="card-action">
+                    <a href="https://github.com/dbramarov/miniStore" target="_blank">View on Github</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col s12 m6 center">
+              <div class="card hoverable z-depth-3">
+                <div class="card-image">
+                  <img src="exp2.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title" style="background-color: #9ccc65; color: white;">{EXP}</span>
+                  <p style="font-size: 20px;">MEAN project that allows users to login/register and create events for other users to join (Google maps API integration).</p>
+                </div>
+                <div class="card-action">
+                  <a href="https://github.com/dbramarov/exp_project" target="_blank">View on Github</a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 center">
+              <div class="card hoverable z-depth-3">
+                <div class="card-image">
+                  <img src="ministore2.png">
+                </div>
+                <div class="card-content">
+                  <span class="card-title" style="background-color: #9ccc65; color: white;">Market Exchange</span>
+                  <p style="font-size: 20px;">MEAN project that allows users to login/register and buy/sell products with other users (AngularJS). **(UNDER CONSTRUCTION)**</p>
+                </div>
+                <div class="card-action">
+                  <a href="https://github.com/dbramarov/miniStore" target="_blank">View on Github</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
     </div>
   </div>
 
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
-      <div class="container red">
+      <div class="container orange darken-4">
         <div class="row center">
-          <h5 class="header col s12 light">Something Something Something Dark Side</h5>
+          <h5 class="header col s12 light">“ Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live. ”  -Rick Osborne</h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/assets/tester.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="/assets/ret_tech.jpg" alt="Unsplashed background img 3" style="filter: brightness(80%);"></div>
   </div>
 
-  <footer id="links"  class="page-footer red">
-    <div class="container red">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+  <footer id="links"  class="page-footer red darken-4">
+    <div class="container red darken-4">
 
+      <div class="row center">
+        <div class="col s12 m4 l2">
+          <a href="https://github.com/jcbarn5" target="_blank" class="white-text" style="text-shadow: -1px 1px 15px #000000;"><p>GitHub</p></a>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col s12 m4 l8">
+          <a href="#" class="white-text" style="text-shadow: -1px 1px 15px #000000;"><p>jacob.barnes8@gmail.com</p></a>
+          <a href="#" class="white-text" style="text-shadow: -1px 1px 15px #000000;"><p>859-391-6309</p></a>
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
+        <div class="col s12 m4 l2">
+          <a href="https://www.linkedin.com/in/jacob-barnes-b8002b114/" target="_blank" class="white-text" style="text-shadow: -1px 1px 15px #000000;"><p>LinkedIn</p></a>
         </div>
       </div>
+
     </div>
     <div class="footer-copyright">
-      <div class="container center red">
-      Made by <a class="white-text text-lighten-3" href="https://github.com/jcbarn5">Jacob Barnes</a>
+      <div class="container center red darken-4">
+      Made by <a class="white-text text-lighten-3" href="https://github.com/jcbarn5">Jacob Barnes June 2017</a>
       </div>
     </div>
   </footer>
