@@ -5,20 +5,10 @@ class UsersController < ApplicationController
   def show
     @products = Product.all
     @bought = Buy.all
-    @total = Product.sum(:price)
+    @total_bought = 0
+    @total_sold = 0
     @sold = Sold.all
-    @user = User.all
+
   end
 
-  def new
-  end
-
-  def create
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end

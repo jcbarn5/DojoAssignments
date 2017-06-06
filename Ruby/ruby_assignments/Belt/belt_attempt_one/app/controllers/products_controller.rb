@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
       redirect_to :back
     else
       flash[:errors] = @new_product.errors.full_messages
-        redirect_to :back
+      redirect_to :back
     end
   end
 

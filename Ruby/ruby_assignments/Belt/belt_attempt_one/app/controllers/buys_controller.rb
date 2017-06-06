@@ -2,11 +2,6 @@ class BuysController < ApplicationController
   def index
   end
 
-  def show
-  end
-
-  def new
-  end
 
   def create
     @product = Product.find(params[:id])
@@ -15,9 +10,5 @@ class BuysController < ApplicationController
     redirect_to :back
   end
 
-  def update
-  end
 
-  def destroy
-  end
 end

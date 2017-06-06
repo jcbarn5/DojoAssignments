@@ -19,7 +19,7 @@
   </tr>
   <% @products.each do |product| %>
       <% unless product.user != current_user%>
-    <% unless @sold.where("product_id=?", product.id).length > 0 %>
+        <% unless @sold.where("product_id=?", product.id).length > 0 %>
 
   <tr>
     <td><%= product.name %></td>
@@ -50,7 +50,6 @@
   </tr>
   <% @bought.each do |bought| %>
   <% unless User.find(bought.user_id) == current_user %>
-
   <tr>
     <td><%= Product.find(bought.product_id).name %></td>
     <td><%= Product.find(bought.product_id).updated_at %></td>
@@ -58,10 +57,11 @@
     <td>$<%= Product.find(bought.product_id).price %></td>
     </td>
   </tr>
+      <% @total_sold+=bought.product.price %>
     <% end %>
   <% end %>
 </table>
-  <p class="total">Total: $<%= @total %></p>
+  <p class="total">Total: $<%= @total_sold %></p>
 
   <h4>Purchases</h4>
 <table border>
@@ -81,8 +81,9 @@
     <td>$<%= Product.find(bought.product_id).price %></td>
     </td>
   </tr>
+      <% @total_bought += bought.product.price %>
     <% end %>
   <% end %>
   <table>
 
-<p class="total">Total: $<%= @total %></p>
+    <p class="total">Total: $<%= @total_bought %></p>
