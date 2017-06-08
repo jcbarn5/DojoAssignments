@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  /*background: blue;*/
+}
+
+.wrapper {
+  width: 1000px;
+  height: 1000px;
+  background: rgba(74, 218, 110, 0.69);
+  margin: 0px auto;
+  padding: 20px 10px 5px 10px;
+  overflow: scroll;
+}
+
+.logReg {
+  text-align: center;
+
+}
+
+.welcome {
+  text-align: center;
+}
+
+table {
+  text-align: center;
+  margin: 5px auto;
+  background: white;
+}
+
+.total {
+  text-align: right;
+}

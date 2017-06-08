@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User's Quotes</title>
+  </head>
+  <body>
+    <h1>User's Quotes Page!</h1>
+
+    <h1>Posts by, {{name.last_name}}</h1>
+    {% for c in count %}
+      <h2>Count {{c.num_quotes}}:</h2>
+    {% endfor %}
+  <ul>
+    {% for item in all_quotes %}
+  <li>
+    <strong>{{item.quoted_by}}: </strong>{{item.quote}}
+  </li>
+    {% endfor %}
+
+  </ul>
+  <form action="logout" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Logout">
+  </form>
+  ||<a href="{% url 'quotes:index' %}">Dashboard</a>||
+  </body>
+</html>

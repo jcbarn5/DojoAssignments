@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Qoutes</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="wrapper">
+
+    <h1>Welcome, {{name.last_name}}!</h1>
+    <br>
+    <h2>Quotable Quotes</h2>
+    <div class="Quotes">
+      <ul>
+          {% for item in all_quotes %}
+  			<li>
+          {{item.quoted_by}}: "{{item.quote}}" Posted By-->
+          -<a href="{% url 'quotes:UserQuotes' item.author.id%}">{{item.author.last_name}}</a>-
+          <a href="{% url 'quotes:AddFavorite' item.id%} ">|Add to my List|</a>
+        </li>
+  			  {% endfor %}
+      </ul>
+    </div>
+    <div class="Favorites">
+      <h2>Your Favorites</h2>
+      <ul>
+  		{% for fav in favs %}
+    		<li>{{fav.quote.quoted_by}}: "{{fav.quote.quote}}"</li>
+        <ul>
+    		  <li>Posted by: <a href="{% url 'quotes:UserQuotes' fav.quote.author.id %}">{{fav.quote.author.last_name}}</a></li>
+        </ul>
+    		<form action="{% url 'quotes:delete' fav.id %}" method="post">
+      		{% csrf_token %}
+    			<input type="submit" name="submit" value="Remove from My List">
+    		</form>
+    		<hr>
+  		{% endfor %}    </div>
+    </ul>
+    <div class="QuoteContribute">
+      <h3>Contribute A Quote:</h3>
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+      <form action="{% url 'quotes:AddQuote' %}" method="post">
+        {% csrf_token %}
+        <p>Quoted By: <input type="text" name="quote_author" placeholder="Confucius"></p>
+        <p>Quote: <textarea name="quote" rows="8" cols="40" placeholder='"All warfare is based on deception"'></textarea>
+        <p><input type="submit" value="Add Quote!"></p>
+      </form>
+    </div>
+    <br>
+    <form action="logout" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Logout">
+    </form>
+  </div>
+
+  </body>
+</html>

@@ -78,28 +78,32 @@ function CombineSorted(arr1,arr2) {
     return arr1;
 };
 
-function Partition(arr) {
-  var partition = arr[0];
-  var temp;
-  var partIdx = 0;
+// function Partition(arr) {
+//   var partition = arr[0];
+//   var temp;
+//   var partIdx = 0;
+//
+//   for (var i = 1; i < arr.length; i++) {
+//     if (arr[i] < partition) {
+//       temp = arr[i];
+//       for (var m = i; m > partIdx; m--) {
+//         arr[m] = arr[m - 1];
+//       }
+//       arr[partIdx] = temp;
+//       partIdx += 1;
+//     }
+//     else {
+//       continue;
+//     }
+//   }
+//   console.log(arr);
+//   console.log(partIdx);
+//   return partIdx;
+// }
 
-  for (var i = 1; i < arr.length; i++) {
-    if (arr[i] < partition) {
-      temp = arr[i];
-      for (var m = i; m > partIdx; m--) {
-        arr[m] = arr[m - 1];
-      }
-      arr[partIdx] = temp;
-      partIdx += 1;
-    }
-    else {
-      continue;
-    }
-  }
-  console.log(arr);
-  console.log(partIdx);
-  return partIdx;
-}
+
+
+
 
 var my_arr = [5,4,9,2,5,3];
 var ans = [4,2,3,5,9,5]

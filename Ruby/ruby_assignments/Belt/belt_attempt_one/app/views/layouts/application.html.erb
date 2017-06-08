@@ -9,18 +9,21 @@
   </head>
 
   <body>
-    <% if flash[:errors] %>
-      <% flash[:errors].each do |error| %>
-        <%= error %>
+    <div class="wrapper">
+
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
       <% end %>
-    <% end %>
-    <% if current_user %>
-      <form id="logout" action="/sessions/" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log Out">
-      </form>
-    <% end %>    
-    <%= yield %>
+      <% if current_user %>
+        <form id="logout" action="/sessions/" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Log Out">
+        </form>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

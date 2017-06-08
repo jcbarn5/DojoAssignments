@@ -1,0 +1,36 @@
+body {
+  background: darkred;
+}
+
+.wrapper {
+  width: 1000px;
+  border: thick black solid;
+  margin: auto;
+  padding: 10px;
+  background: grey;
+
+}
+
+h1 {
+  text-decoration: underline;
+  background: white;
+  width: 30%;
+  border-radius: 10%;
+}
+
+.Quotes {
+  display: inline-block;
+  width: 400px;
+  overflow: scroll;
+  background: rgba(2, 201, 166, 0.51);
+  height: 310px;
+}
+
+.Favorites{
+  display: inline-block;
+  width: 400px;
+  overflow: scroll;
+  margin-left: 50px;
+  background: rgba(2, 201, 166, 0.51);
+  height: 310px;
+}
