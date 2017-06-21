@@ -1,0 +1,28 @@
+body {
+  background: darkorange;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: auto;
+  background: rgba(115, 78, 194, 0.75);
+  border: solid black 5px;
+  padding: 10px;
+  overflow: scroll;
+  color: white;
+}
+
+textarea {
+  background: rgb(162, 47, 54);
+  border-radius: 5%;
+}
+
+input {
+  height: 50px;
+  border-radius: 5%;
+  background: rgb(209, 197, 42);
+}
+
+h1 {
+  text-decoration: underline;
+}
