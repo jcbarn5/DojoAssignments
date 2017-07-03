@@ -10,10 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4",
+    "bcrypt": "^1.0.1",
     "body-parser": "latest",
-    "mongoose" : "latest",
+    "express": "^4.13.4",
     "express-session": "^1.14.2",
-    "bcrypt": "^1.0.1"
+    "materialize-css": "^0.99.0",
+    "mongoose": "latest"
   }
 }

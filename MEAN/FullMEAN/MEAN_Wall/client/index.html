@@ -2,6 +2,7 @@
 <html ng-app="app">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script src="angular/angular.js"></script>
         <script src="angular-route/angular-route.js"></script>
         <script src="angular-cookies/angular-cookies.js"></script>
@@ -9,12 +10,16 @@
         <script src="assets/controllers/userController.js" charset="utf-8"></script>
         <script src="assets/controllers/messageController.js" charset="utf-8"></script>
         <script src="assets/factories/wallFactory.js" charset="utf-8"></script>
-        <link rel="stylesheet" href="/static/style.css">
+        <!-- <link rel="stylesheet" href="/static/style.css"> -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css"  media="screen,projection"/>
         <title>Full MEAN Wall</title>
     </head>
     <body>
         <div ng-view="">
 
         </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
 </html>
