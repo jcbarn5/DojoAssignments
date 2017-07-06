@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math;
 
-public class Pythagorean {
+public class PythagoreanSingleFile {
   public static void main (String[] args){
     double legA, legB, legC;
     Scanner in = new Scanner(System.in);
@@ -9,8 +9,7 @@ public class Pythagorean {
     legA = in.nextDouble();
     System.out.print("What value is side b: ");
     legB = in.nextDouble();
-
     legC = Math.sqrt((legA*legA)+(legB*legB));
-    System.out.println("Hypotenuse: " + legC);
+    System.out.println("Hypotenuse is: " + legC);
     }
 }
