@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.*;
-
+import java.util.concurrent.ThreadLocalRandom;
 
 public class PuzzleJava{
   // Create an array with the following values: 3,5,1,2,7,9,8,13,25,32. Print the sum of all numbers in the array. Also have the function return an array that only includes numbers that are greater than 10 (e.g. when you pass the array above, it should return an array with the values of 13,25,32)
@@ -43,10 +43,30 @@ public class PuzzleJava{
     return "fin";
   }
   // Generate and return an array with 10 random numbers between 55-100.
-
+  public static int[] Rando(){
+    int[] RandoTen;
+    RandoTen = new int[10];
+    // Random RandoGen = new Random();
+    for (int i = 0; i < 10; i++) {
+      RandoTen[i] = ThreadLocalRandom.current().nextInt(55, 101);
+    }
+    System.out.println(Arrays.toString(RandoTen));
+    return RandoTen;
+  }
   // Generate and return an array with 10 random numbers between 55-100 and have it be sorted (showing the smallest number in the beginning). Display all the numbers in the array. Next, display the minimum value in the array as well as the maximum value.
-
+  public static int[] RandoSorted(){
+    int[] tenner = Rando();
+    Arrays.sort(tenner);
+    System.out.println(Arrays.toString(tenner));
+    System.out.println("Min: " + Integer.toString(tenner[0]));
+    System.out.println("Max: " + Integer.toString(tenner[tenner.length-1]));
+    return tenner;
+  }
   // Create a random string that is 5 characters long.
+  public static String RandoStr(){
+
+
+  }
 
   // Generate an array with 10 random strings that are each 5 characters long
 }

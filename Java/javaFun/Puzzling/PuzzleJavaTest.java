@@ -7,6 +7,9 @@ public class PuzzleJavaTest{
     // System.out.println(tester.SumNTen(arr));
     // System.out.println(tester.Shuffler(names));
     // System.out.println(tester.Shuffler(names));
-    System.out.println(tester.AlphaShuff(alpha));
+    // System.out.println(tester.AlphaShuff(alpha));
+    // System.out.println(tester.Rando());
+    // System.out.println(tester.RandoSorted());
+    System.out.println(tester.RandoStr());
   }
 }

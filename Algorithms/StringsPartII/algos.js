@@ -28,13 +28,13 @@ function RotateString(str, num) {
   str_arr.length -= num;
   var ans = str_arr.join("");
   console.log(ans);
-  return ans
+  return ans;
 }
 //
 var strger = "Boris Godunov"
 // // var strger = "The Eagles are the worst team"
 //
-// RotateString(strger, 5)
+RotateString(strger, 5);
 
 // var strger2 = "dunovoris Go"
 //
