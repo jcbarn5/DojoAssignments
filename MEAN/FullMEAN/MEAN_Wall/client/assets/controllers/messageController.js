@@ -18,9 +18,6 @@ app.controller('messageController', ['wallFactory','$scope','$location','$routeP
           $scope.message = {};
       })
   }
-  ///////////////
-  ///////////////
-  /////////
 
 //////////////////////////////////
   $scope.logout = function(){

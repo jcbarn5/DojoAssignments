@@ -1,4 +1,28 @@
-//Greatest Common Factor
+//FACTORIAL
+// function RecFac(num) {
+//   if(num == 1){
+//     return num;
+//   }
+//   else{
+//     return num*RecFac(num-1);
+//   }
+// }
+//
+// console.log(RecFac(5));
+
+//FIBONACCI
+// function fibonacci(num) {
+//   if (num <= 1){
+//     return 1;
+//   }
+//   else{
+//     return fibonacci(num - 1) + fibonacci(num - 2);
+//   }
+// };
+// console.log(fibonacci(5));
+
+
+//GREATEST COMMON FACTOR
 // function rGFC(a,b){
 //     if(a === b){
 //         return a;
@@ -11,47 +35,47 @@
 //     };
 // }
 
-//Got Any Grapes
-function gHelper(arr, i, sum){
-  if(i >= arr.length-1 || i >= arr.length-2){
-    return sum;
-  }
-  else{
-    var right = sum;
-    var left = sum;
-    left = gHelper(arr, i+2, (sum+arr[i+2]))
-    if(arr[i+3]){
-      right = gHelper(arr, i+3, (sum+arr[i+3]))
-    }
-    if(left > right){
-      sum = left;
-
-    else{
-      sum = right;
-    }
-    return sum;
-  }
-}
-
-function Grapes(arr){
-  var i = 0;
-  var sum = arr[i];
-  var sum2 = arr[i+1];
-  sum = gHelper(arr, i, sum);
-  sum2 = gHelper(arr, i+1, sum2);
-  if(sum>sum2){
-    console.log(sum);
-    return sum;
-  }
-  else{
-    console.log(sum2);
-    return sum2;
-  }
-}
+//GOT ANY GRAPES
+// function gHelper(arr, i, sum){
+//   if(i >= arr.length-1 || i >= arr.length-2){
+//     return sum;
+//   }
+//   else{
+//     var right = sum;
+//     var left = sum;
+//     left = gHelper(arr, i+2, (sum+arr[i+2]))
+//     if(arr[i+3]){
+//       right = gHelper(arr, i+3, (sum+arr[i+3]))
+//     }
+//     if(left > right){
+//       sum = left;
+//
+//     else{
+//       sum = right;
+//     }
+//     return sum;
+//   }
+// }
+//
+// function Grapes(arr){
+//   var i = 0;
+//   var sum = arr[i];
+//   var sum2 = arr[i+1];
+//   sum = gHelper(arr, i, sum);
+//   sum2 = gHelper(arr, i+1, sum2);
+//   if(sum>sum2){
+//     console.log(sum);
+//     return sum;
+//   }
+//   else{
+//     console.log(sum2);
+//     return sum2;
+//   }
+// }
 // // var myArr = [20];
 // // Grapes(myArr);
 //
-// //Binary Search Function
+// //BINARY SEARCH FUNCTION
 // function rBS(arr, val){
 //   var search = Math.floor((arr.length)/2)
 //   var spl_arr;
@@ -86,7 +110,7 @@ function Grapes(arr){
 // rBS(myArr, 6);
 // rBS(myArr, 9);
 
-//Anagrams
+//ANAGRAMS
 // function Anagram(str){
 //   var marr =[];
 //   var str1 = '';
@@ -114,15 +138,14 @@ function Grapes(arr){
 // Anagram("tiger");
 
 
-
+//SPLICE EXAMPLE
 // var string = "test"
 // var x = string.split("")
 // x.splice(1,1)
 // console.log(x)
 // console.log(string)
 
-//Rising Squares
-
+//RISING SQUARES
 // function riseSq(num){
 //   var i = num;
 //   var ans = [];

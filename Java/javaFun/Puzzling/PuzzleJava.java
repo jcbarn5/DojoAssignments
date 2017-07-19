@@ -64,9 +64,33 @@ public class PuzzleJava{
   }
   // Create a random string that is 5 characters long.
   public static String RandoStr(){
-
-
+    Random Rand = ThreadLocalRandom.current();
+    String letters = "abcdefghijklmnopqrstuvwxyz";
+    int StrLen = 5;
+    return generateString(Rand, letters, StrLen);
   }
 
   // Generate an array with 10 random strings that are each 5 characters long
+  public static String[] RandoStr10(){
+    String[] stringArray;
+    stringArray = new String[10];
+    Random rng = ThreadLocalRandom.current();
+    String letters = "abcdefghijklmnopqrstuvwxyz";
+    int five = 5;
+
+    for(int x = 0; x < 10; x++){
+      String randString = generateString(rng, letters, five);
+      stringArray[x] = randString;
+    }
+    System.out.println(Arrays.toString(stringArray));
+    return stringArray;
+  }
+
+  static String generateString(Random rng, String characters, int length){
+    char[] text = new char[length];
+    for ( int i = 0; i < length; i++){
+      text[i] = characters.charAt(rng.nextInt(characters.length()));
+    }
+    return new String(text);
+  }
 }
